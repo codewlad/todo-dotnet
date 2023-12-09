@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dr0QOAFPi5Gvisi70RgennOi4mWcQpxkWP4I8Zd0sTJt2AjMM6dTTG39UZEgbV89Ymr+LgFcNeOljBoAbDgGUA==",
+  "dgSpecHash": "5v53HVFUpVsXs3Z5l41+MgHJ+lXU7BJ6ehpvOo9Ellzds8WTKrjVULGZF1vOaSx+1eZGe8SYNHkXKLYx6doK+g==",
   "success": true,
   "projectFilePath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.App\\ToDo.App.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\wlads\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\wlads\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

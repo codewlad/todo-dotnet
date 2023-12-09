@@ -1,0 +1,12 @@
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\bin\Debug\net8.0\ToDo.Domain.deps.json
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\bin\Debug\net8.0\ToDo.Domain.dll
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\bin\Debug\net8.0\ToDo.Domain.pdb
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.AssemblyInfoInputs.cache
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.AssemblyInfo.cs
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.csproj.CoreCompileInputs.cache
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.sourcelink.json
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.dll
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\refint\ToDo.Domain.dll
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.pdb
+C:\codewlad\.net\repos\ToDo\ToDo.Domain\obj\Debug\net8.0\ref\ToDo.Domain.dll

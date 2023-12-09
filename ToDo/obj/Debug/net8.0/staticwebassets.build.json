@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "H1WANdguFAXQRsubMH2+1/loXrNEl5e3jqkogVfUivo=",
-  "Source": "ToDo",
-  "BasePath": "_content/ToDo",
+  "Hash": "pj0/uQr7gPYZgDlAet0EvlA0RN8Tv19N52IhVEjlaDk=",
+  "Source": "ToDo.Api",
+  "BasePath": "_content/ToDo.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

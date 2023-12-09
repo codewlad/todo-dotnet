@@ -1,0 +1,16 @@
+C:\codewlad\.net\repos\ToDo\ToDo.App\bin\Debug\net8.0\ToDo.App.deps.json
+C:\codewlad\.net\repos\ToDo\ToDo.App\bin\Debug\net8.0\ToDo.App.dll
+C:\codewlad\.net\repos\ToDo\ToDo.App\bin\Debug\net8.0\ToDo.App.pdb
+C:\codewlad\.net\repos\ToDo\ToDo.App\bin\Debug\net8.0\ToDo.Domain.dll
+C:\codewlad\.net\repos\ToDo\ToDo.App\bin\Debug\net8.0\ToDo.Domain.pdb
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.csproj.AssemblyReference.cache
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.AssemblyInfoInputs.cache
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.AssemblyInfo.cs
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.csproj.CoreCompileInputs.cache
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.sourcelink.json
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.csproj.CopyComplete
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.dll
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\refint\ToDo.App.dll
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ToDo.App.pdb
+C:\codewlad\.net\repos\ToDo\ToDo.App\obj\Debug\net8.0\ref\ToDo.App.dll
