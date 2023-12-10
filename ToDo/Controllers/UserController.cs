@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ToDo.App.Dto.User;
+using ToDo.App.Interfaces;
 
 namespace ToDo.Api.Controllers
 {
@@ -6,6 +8,13 @@ namespace ToDo.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserApplication _userApplication;
+
+        public UserController(IUserApplication userApplication)
+        {
+            _userApplication = userApplication;
+        }
+
         // GET: api/<UserController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -22,8 +31,11 @@ namespace ToDo.Api.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] CreateUserDTO request)
         {
+            await _userApplication.CreateUserAsync(request);
+
+            return Ok();
         }
 
         // PUT api/<UserController>/5
