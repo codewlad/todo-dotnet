@@ -22,5 +22,17 @@ namespace ToDo.App.Application
             var userModel = _mapper.Map<UserModel>(user);
             await _userService.CreateUserAsync(userModel);
         }
+
+        public async Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync()
+        {
+            IEnumerable<UserModel> users = await _userService.GetAllUsersAsync();
+            var response = _mapper.Map<IEnumerable<UserResponseDTO>>(users);
+            return response;
+        }
+
+        public Task UpdateUserAsync(UpdateUserDTO user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

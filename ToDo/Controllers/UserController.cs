@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ToDo.App.Dto.User;
 using ToDo.App.Interfaces;
+using ToDo.Domain.Models;
 
 namespace ToDo.Api.Controllers
 {
@@ -17,9 +18,11 @@ namespace ToDo.Api.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var response = await _userApplication.GetAllUsersAsync();
+
+            return Ok(response);
         }
 
         // GET api/<UserController>/5

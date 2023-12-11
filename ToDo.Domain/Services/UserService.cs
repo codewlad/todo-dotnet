@@ -23,9 +23,9 @@ namespace ToDo.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<UserModel>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetAllUsersAsync();
         }
 
         public Task<UserModel> GetUserByIdAsync(int userId)

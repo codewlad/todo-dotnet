@@ -2,9 +2,11 @@
 
 namespace ToDo.Domain.Interfaces.Repositories.DataConnector
 {
-    public interface IDbConnector
+    public interface IDbConnector : IDisposable
     {
         IDbConnection DbConnection { get; }
-        IDbTransaction DbTransaction { get; set; }
+        IDbTransaction DbTransaction { get; }
+
+        IDbTransaction BeginTransaction(IsolationLevel isolation);
     }
 }

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lFQDy8FIv4ELUxoLAtlrOt2/wMUegJXwV8o+uAW09pMlERPYlKZHdgNjzNF+awdLB3KmEoZmdZGj16Rqza1OZA==",
+  "dgSpecHash": "w643X/J8crkVFwgtEWZMicv5Rx13IQUCxNzmrsRpQbV8/sJictz/dephIoj6A+VlCzw8sZQjBP0+ju1NvuSYMA==",
   "success": true,
   "projectFilePath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.Infra\\ToDo.Infra.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\wlads\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\wlads\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\wlads\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\wlads\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\wlads\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

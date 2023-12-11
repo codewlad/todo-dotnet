@@ -1,45 +1,104 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Dapper;
 using ToDo.Domain.Interfaces.Repositories;
+using ToDo.Domain.Interfaces.Repositories.DataConnector;
 using ToDo.Domain.Models;
 
 namespace ToDo.Infra.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly IDbConnection _dbConnection;
-        public UserRepository(IDbConnection dbConnection)
+        private readonly IDbConnector _dbConnector;
+        public UserRepository(IDbConnector dbConnector)
         {
-            _dbConnection = dbConnection;
+            _dbConnector = dbConnector;
         }
 
-        public Task CreateUserAsync(UserModel user)
+        const string basesql = @"
+            SELECT [userId]
+                ,[name]
+                ,[email]
+                ,[login]
+                ,[password]
+                ,[createdAt]
+            FROM [dbo].[users]
+            WHERE 1 = 1
+        ";
+
+        public async Task CreateUserAsync(UserModel user)
         {
-            throw new NotImplementedException();
+            string sql = @"
+                INSERT INTO [dbo].[users]
+                   ([name]
+                   ,[email]
+                   ,[login]
+                   ,[password]
+                   ,[createdAt])
+                VALUES
+                   (@Name
+                   ,@Email
+                   ,@Login
+                   ,@Password
+                   ,@CreatedAt)
+            ";
+
+            await _dbConnector.DbConnection.ExecuteAsync(sql, new
+            {
+                Name = user.Name,
+                Email = user.Email,
+                Login = user.Login,
+                Password = user.Password,
+                CreatedAt = DateTime.Now,
+            }, _dbConnector.DbTransaction);
         }
 
-        public Task DeleteUserAsync(int userId)
+        public async Task UpdateUserAsync(UserModel user)
         {
-            throw new NotImplementedException();
+            string sql = @"
+                UPDATE [dbo].[users]
+                SET [name] = @Name
+                   ,[email] = @Email
+                   ,[login] = @Login
+                   ,[password] = @Password
+                WHERE
+                   UserId = @UserId
+            ";
+
+            await _dbConnector.DbConnection.ExecuteAsync(sql, new
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                Login = user.Login,
+                Password = user.Password,
+            }, _dbConnector.DbTransaction);
         }
 
-        public Task<IEnumerable<UserModel>> GetAllUsersAsync()
+        public async Task DeleteUserAsync(int userId)
         {
-            throw new NotImplementedException();
+            string sql = @$"
+                DELETE FROM [dbo].[users]
+                WHERE UserId = @UserId
+            ";
+
+            await _dbConnector.DbConnection.ExecuteAsync(sql, new { UserId = userId }, _dbConnector.DbTransaction);
         }
 
-        public Task<UserModel> GetUserByIdAsync(int userId)
+        public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            string sql = basesql;
+
+            var users = await _dbConnector.DbConnection.QueryAsync<UserModel>(sql, _dbConnector.DbTransaction);
+
+            return users.ToList();
         }
 
-        public Task UpdateUserAsync(UserModel user)
+        public async Task<UserModel> GetUserByIdAsync(int userId)
         {
-            throw new NotImplementedException();
+            string sql = $"{basesql} AND Id = @Id";
+
+            var user = await _dbConnector.DbConnection.QueryFirstOrDefaultAsync<UserModel>(sql, new { Id = userId }, _dbConnector.DbTransaction);
+
+            return user;
         }
     }
 }

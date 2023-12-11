@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using ToDo.Domain.Interfaces.Repositories.DataConnector;
 
@@ -11,9 +12,23 @@ namespace ToDo.Infra.DataConnector
             DbConnection = SqlClientFactory.Instance.CreateConnection();
             DbConnection.ConnectionString = connectionString;
         }
-        public IDbConnection DbConnection {get;}
+        public IDbConnection DbConnection { get; }
 
-        public IDbTransaction DbTransaction {get; private set;}
+        public IDbTransaction DbTransaction { get; set; }
+
+        public IDbTransaction BeginTransaction(IsolationLevel isolation)
+        {
+            if (DbTransaction != null)
+            {
+                return DbTransaction;
+            }
+
+            if (DbConnection.State == ConnectionState.Closed)
+            {
+                DbConnection.Open();
+            }
+            return (DbTransaction = DbConnection.BeginTransaction(isolation));
+        }
 
         public void Dispose()
         {
