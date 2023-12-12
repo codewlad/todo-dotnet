@@ -13,14 +13,17 @@ namespace ToDo.Domain.Services
             _userRepository = userRepository;
         }
 
-        public Task CreateUserAsync(UserModel user)
+        public async Task<int> CreateUserAsync(UserModel user)
         {
-            throw new NotImplementedException();
+            var response = await _userRepository.CreateUserAsync(user);
+
+            return response;
         }
 
-        public Task DeleteUserAsync(int userId)
+        public async Task<bool> DeleteUserAsync(int userId)
         {
-            throw new NotImplementedException();
+            var response = await _userRepository.DeleteUserAsync(userId);
+            return response;
         }
 
         public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
@@ -28,14 +31,14 @@ namespace ToDo.Domain.Services
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public Task<UserModel> GetUserByIdAsync(int userId)
+        public async Task<UserModel> GetUserByIdAsync(int userId)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetUserByIdAsync(userId);
         }
 
-        public Task UpdateUserAsync(UserModel user)
+        public Task<UserModel> UpdateUserAsync(UserModel user)
         {
-            throw new NotImplementedException();
+            return _userRepository.UpdateUserAsync(user);
         }
     }
 }

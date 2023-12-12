@@ -11,10 +11,22 @@
           "Dapper": "2.1.24",
           "Dapper.Contrib": "2.0.78",
           "System.Data.SqlClient": "4.8.5",
+          "ToDo.App": "1.0.0",
           "ToDo.Domain": "1.0.0"
         },
         "runtime": {
           "ToDo.Infra.dll": {}
+        }
+      },
+      "AutoMapper/12.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
+          }
         }
       },
       "Dapper/2.1.24": {
@@ -36,6 +48,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -111,6 +124,15 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
+      "ToDo.App/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "ToDo.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ToDo.App.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
         "runtime": {
           "ToDo.Domain.dll": {}
@@ -123,6 +145,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "path": "automapper/12.0.1",
+      "hashPath": "automapper.12.0.1.nupkg.sha512"
     },
     "Dapper/2.1.24": {
       "type": "package",
@@ -137,6 +166,13 @@
       "sha512": "sha512-sUfDVIf8LlHNiz3MfUFodeyRiemfN1JFkPxYjCxFWlwNPg1iQ49mB+0E89TkywWs4X8fiRWOVDQgtH5FtzK5Kw==",
       "path": "dapper.contrib/2.0.78",
       "hashPath": "dapper.contrib.2.0.78.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
@@ -200,6 +236,11 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "ToDo.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ToDo.Domain/1.0.0": {
       "type": "project",

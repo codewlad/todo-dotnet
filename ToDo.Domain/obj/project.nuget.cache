@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sftqsN/SLdeaBo/Tj9jpcFvgTgE38oGYvNTzyVnRbxQIL/3+gPrp97faYTfTFotxoSNVLCEOIspg3lgjCHmZ3Q==",
+  "dgSpecHash": "H9iTrT4rruHYwY0IEMdGyGHeIYijh5cSthli7C1JycL0EBZhTuw3z7KGuVjp7MTnwvirPk4J5U+CU5FtLAZ3pg==",
   "success": true,
-  "projectFilePath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj",
+  "projectFilePath": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.Domain\\ToDo.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

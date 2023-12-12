@@ -24,7 +24,7 @@ namespace ToDo.Infra.Repositories
             WHERE 1 = 1
         ";
 
-        public async Task CreateUserAsync(UserModel user)
+        public async Task<int> CreateUserAsync(UserModel user)
         {
             string sql = @"
                 INSERT INTO [dbo].[users]
@@ -38,10 +38,11 @@ namespace ToDo.Infra.Repositories
                    ,@Email
                    ,@Login
                    ,@Password
-                   ,@CreatedAt)
+                   ,@CreatedAt);
+                SELECT CAST(SCOPE_IDENTITY() as int);
             ";
 
-            await _dbConnector.DbConnection.ExecuteAsync(sql, new
+            int userId = await _dbConnector.DbConnection.ExecuteScalarAsync<int>(sql, new
             {
                 Name = user.Name,
                 Email = user.Email,
@@ -49,9 +50,11 @@ namespace ToDo.Infra.Repositories
                 Password = user.Password,
                 CreatedAt = DateTime.Now,
             }, _dbConnector.DbTransaction);
+
+            return userId;
         }
 
-        public async Task UpdateUserAsync(UserModel user)
+        public async Task<UserModel> UpdateUserAsync(UserModel user)
         {
             string sql = @"
                 UPDATE [dbo].[users]
@@ -63,7 +66,7 @@ namespace ToDo.Infra.Repositories
                    UserId = @UserId
             ";
 
-            await _dbConnector.DbConnection.ExecuteAsync(sql, new
+            var updatedUser = await _dbConnector.DbConnection.QueryFirstOrDefaultAsync(sql, new
             {
                 UserId = user.UserId,
                 Name = user.Name,
@@ -71,16 +74,22 @@ namespace ToDo.Infra.Repositories
                 Login = user.Login,
                 Password = user.Password,
             }, _dbConnector.DbTransaction);
+
+            return updatedUser;
         }
 
-        public async Task DeleteUserAsync(int userId)
+        public async Task<bool> DeleteUserAsync(int userId)
         {
             string sql = @$"
                 DELETE FROM [dbo].[users]
                 WHERE UserId = @UserId
             ";
 
-            await _dbConnector.DbConnection.ExecuteAsync(sql, new { UserId = userId }, _dbConnector.DbTransaction);
+            var rowsAffected = await _dbConnector.DbConnection.ExecuteAsync(sql, new { UserId = userId }, _dbConnector.DbTransaction);
+
+            if (rowsAffected > 0)
+                return true;
+            return false;
         }
 
         public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
@@ -94,7 +103,7 @@ namespace ToDo.Infra.Repositories
 
         public async Task<UserModel> GetUserByIdAsync(int userId)
         {
-            string sql = $"{basesql} AND Id = @Id";
+            string sql = $"{basesql} AND userId = @Id";
 
             var user = await _dbConnector.DbConnection.QueryFirstOrDefaultAsync<UserModel>(sql, new { Id = userId }, _dbConnector.DbTransaction);
 

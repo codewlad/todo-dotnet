@@ -16,6 +16,8 @@ namespace ToDo.App.Mapper
             CreateMap<CreateUserDTO, UserModel>();
 
             CreateMap<UserModel, UserResponseDTO>();
+
+            CreateMap<UpdateUserDTO, UserModel>();
         }
     }
 }

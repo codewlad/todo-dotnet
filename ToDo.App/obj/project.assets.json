@@ -137,24 +137,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wlads\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\WladimirFerreira\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.App\\ToDo.App.csproj",
+      "projectUniqueName": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.App\\ToDo.App.csproj",
       "projectName": "ToDo.App",
-      "projectPath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.App\\ToDo.App.csproj",
-      "packagesPath": "C:\\Users\\wlads\\.nuget\\packages\\",
-      "outputPath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.App\\obj\\",
+      "projectPath": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.App\\ToDo.App.csproj",
+      "packagesPath": "C:\\Users\\WladimirFerreira\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.App\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\wlads\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\WladimirFerreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -162,15 +157,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj": {
-              "projectPath": "C:\\codewlad\\.net\\repos\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj"
+            "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.Domain\\ToDo.Domain.csproj": {
+              "projectPath": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo.Domain\\ToDo.Domain.csproj"
             }
           }
         }

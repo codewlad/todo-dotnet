@@ -214,6 +214,7 @@
           "Dapper": "2.1.24",
           "Dapper.Contrib": "2.0.78",
           "System.Data.SqlClient": "4.8.5",
+          "ToDo.App": "1.0.0",
           "ToDo.Domain": "1.0.0"
         },
         "runtime": {
