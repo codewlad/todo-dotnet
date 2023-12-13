@@ -13,32 +13,37 @@ namespace ToDo.Domain.Services
             _userRepository = userRepository;
         }
 
-        public async Task<int> CreateUserAsync(UserModel user)
-        {
-            var response = await _userRepository.CreateUserAsync(user);
-
-            return response;
-        }
-
-        public async Task<bool> DeleteUserAsync(int userId)
-        {
-            var response = await _userRepository.DeleteUserAsync(userId);
-            return response;
-        }
-
         public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
         {
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public async Task<UserModel> GetUserByIdAsync(int userId)
+        public async Task<int?> CreateUserAsync(UserModel user)
+        {
+            return await _userRepository.CreateUserAsync(user);
+        }
+
+        public async Task<bool> UpdateUserAsync(UserModel user)
+        {
+            var rowsAffected = await _userRepository.UpdateUserAsync(user);
+
+            if (rowsAffected > 0)
+                return true;
+            return false;
+        }
+
+        public async Task<UserModel?> GetUserByIdAsync(int userId)
         {
             return await _userRepository.GetUserByIdAsync(userId);
         }
 
-        public Task<UserModel> UpdateUserAsync(UserModel user)
+        public async Task<bool> DeleteUserAsync(int userId)
         {
-            return _userRepository.UpdateUserAsync(user);
+            var rowsAffected = await _userRepository.DeleteUserAsync(userId);
+
+            if (rowsAffected > 0)
+                return true;
+            return false;
         }
     }
 }

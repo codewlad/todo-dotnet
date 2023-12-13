@@ -4,14 +4,10 @@ namespace ToDo.App.Interfaces
 {
     public interface IUserApplication
     {
-        Task<int> CreateUserAsync(CreateUserDTO user);
-
-        Task<UserResponseDTO> UpdateUserAsync(UpdateUserDTO user);
-
-        Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync();
-        
-        Task<bool> DeleteUserAsync(int userId);
-        
+        Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync();       
+        Task<int?> CreateUserAsync(CreateUserDTO user);
+        Task<bool> UpdateUserAsync(UpdateUserDTO user);
         Task<UserResponseDTO> GetUserByIdAsync(int userId);
+        Task<bool> DeleteUserAsync(int userId);
     }
 }

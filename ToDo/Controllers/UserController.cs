@@ -20,7 +20,30 @@ namespace ToDo.Api.Controllers
         {
             var users = await _userApplication.GetAllUsersAsync();
 
-            return Ok(users);
+            if(users != null && users.Any())
+                return Ok(users);
+            return NotFound("Nenhum usuário cadastrado.");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Post([FromBody] CreateUserDTO request)
+        {
+            int? userId = await _userApplication.CreateUserAsync(request);
+
+            if(userId.HasValue)
+                return Ok($"Usuário atualizado com sucesso! ID: {userId}");
+            return BadRequest("Não foi possível criar o usuário.");
+
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put([FromBody] UpdateUserDTO request)
+        {
+            var response = await _userApplication.UpdateUserAsync(request);
+
+            if (response)
+                return Ok("Usuário atualizado com sucesso!");
+            return NotFound("Não foi possível atualizar o usuário.");
         }
 
         [HttpGet("{id}")]
@@ -28,31 +51,19 @@ namespace ToDo.Api.Controllers
         {
             var user = await _userApplication.GetUserByIdAsync(id);
 
-            return Ok(user);
+            if(user !=  null)
+                return Ok(user);
+            return NotFound("Usuário não encontrado.");
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CreateUserDTO request)
-        {
-            var userId = await _userApplication.CreateUserAsync(request);
-
-            return Ok(userId);
-        }
-
-        [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UpdateUserDTO request)
-        {
-            await _userApplication.UpdateUserAsync(request);
-
-            return Ok();
-        }
-        
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
             var response = await _userApplication.DeleteUserAsync(id);
 
-            return Ok(response);
+            if(response)
+                return Ok("Usuário excluído com sucesso!");
+            return NotFound("Não foi possível excluir o usuário.");
         }
     }
 }
