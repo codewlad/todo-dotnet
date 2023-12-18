@@ -96,3 +96,5 @@ C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\obj\Debug\net8.0\
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\obj\Debug\net8.0\ToDo.Api.pdb
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\obj\Debug\net8.0\ToDo.Api.genruntimeconfig.cache
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\obj\Debug\net8.0\ref\ToDo.Api.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\bin\Debug\net8.0\ToDo.CrossCutting.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo\bin\Debug\net8.0\ToDo.CrossCutting.pdb

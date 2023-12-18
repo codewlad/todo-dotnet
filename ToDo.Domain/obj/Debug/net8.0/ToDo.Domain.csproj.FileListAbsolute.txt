@@ -22,3 +22,7 @@ C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\net8.0\refint\ToDo.Domain.dll
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.pdb
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\net8.0\ref\ToDo.Domain.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\bin\Debug\net8.0\ToDo.CrossCutting.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\bin\Debug\net8.0\ToDo.CrossCutting.pdb
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.csproj.AssemblyReference.cache
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Domain\obj\Debug\net8.0\ToDo.Domain.csproj.CopyComplete

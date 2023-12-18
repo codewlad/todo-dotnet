@@ -133,7 +133,15 @@
           "ToDo.App.dll": {}
         }
       },
+      "ToDo.CrossCutting/1.0.0": {
+        "runtime": {
+          "ToDo.CrossCutting.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
+        "dependencies": {
+          "ToDo.CrossCutting": "1.0.0"
+        },
         "runtime": {
           "ToDo.Domain.dll": {}
         }
@@ -238,6 +246,11 @@
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
     "ToDo.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ToDo.CrossCutting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

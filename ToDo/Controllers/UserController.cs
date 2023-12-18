@@ -4,8 +4,8 @@ using ToDo.App.Interfaces;
 
 namespace ToDo.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/[controller]/[action]")]
+    //[ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUserApplication _userApplication;
@@ -16,7 +16,7 @@ namespace ToDo.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get()
+        public async Task<ActionResult> All()
         {
             var users = await _userApplication.GetAllUsersAsync();
 
@@ -26,18 +26,17 @@ namespace ToDo.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CreateUserDTO request)
+        public async Task<ActionResult> Create([FromBody] CreateUserDTO request)
         {
             int? userId = await _userApplication.CreateUserAsync(request);
 
             if(userId.HasValue)
-                return Ok($"Usuário atualizado com sucesso! ID: {userId}");
+                return Ok($"Usuário criado com sucesso! ID: {userId}");
             return BadRequest("Não foi possível criar o usuário.");
-
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UpdateUserDTO request)
+        public async Task<ActionResult> Update([FromBody] UpdateUserDTO request)
         {
             var response = await _userApplication.UpdateUserAsync(request);
 
@@ -47,7 +46,7 @@ namespace ToDo.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> Get(int id)
+        public async Task<ActionResult> UserById(int id)
         {
             var user = await _userApplication.GetUserByIdAsync(id);
 

@@ -30,3 +30,5 @@ C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\obj\Debug\net
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\obj\Debug\net8.0\refint\ToDo.App.dll
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\obj\Debug\net8.0\ToDo.App.pdb
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\obj\Debug\net8.0\ref\ToDo.App.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\bin\Debug\net8.0\ToDo.CrossCutting.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.App\bin\Debug\net8.0\ToDo.CrossCutting.pdb

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2oUamJTTK5cFlL6v+f+2c1KLVV87rOshx7uvgNdfb2A91OAeu2ib2izwYWaZhtuu3Z6nV/WBx/ED6tZ7oSLjSg==",
+  "dgSpecHash": "t89AksSfsMCZ8hFZ/e4StnBDbFAwpke16S4tIfuM+7kUymJy3GxKfbFI+XDK/bQGatlnpAlVP2JhVj3gc9wjZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\WladimirFerreira\\source\\repos\\dotnet\\todo-dotnet\\ToDo\\ToDo.Api.csproj",
   "expectedPackageFiles": [

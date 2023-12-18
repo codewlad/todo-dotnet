@@ -27,7 +27,15 @@
         }
       },
       "Microsoft.CSharp/4.7.0": {},
+      "ToDo.CrossCutting/1.0.0": {
+        "runtime": {
+          "ToDo.CrossCutting.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
+        "dependencies": {
+          "ToDo.CrossCutting": "1.0.0"
+        },
         "runtime": {
           "ToDo.Domain.dll": {}
         }
@@ -53,6 +61,11 @@
       "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "path": "microsoft.csharp/4.7.0",
       "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "ToDo.CrossCutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ToDo.Domain/1.0.0": {
       "type": "project",

@@ -215,9 +215,22 @@
           "bin/placeholder/ToDo.App.dll": {}
         }
       },
+      "ToDo.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ToDo.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToDo.CrossCutting.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ToDo.CrossCutting": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ToDo.Domain.dll": {}
         },
@@ -667,6 +680,11 @@
       "type": "project",
       "path": "../ToDo.App/ToDo.App.csproj",
       "msbuildProject": "../ToDo.App/ToDo.App.csproj"
+    },
+    "ToDo.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../ToDo.CrossCutting/ToDo.CrossCutting.csproj",
+      "msbuildProject": "../ToDo.CrossCutting/ToDo.CrossCutting.csproj"
     },
     "ToDo.Domain/1.0.0": {
       "type": "project",

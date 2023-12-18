@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDo.CrossCutting\ToDo.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -32,3 +32,5 @@ C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\obj\Debug\n
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\obj\Debug\net8.0\ref\ToDo.Infra.dll
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\bin\Debug\net8.0\ToDo.App.dll
 C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\bin\Debug\net8.0\ToDo.App.pdb
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\bin\Debug\net8.0\ToDo.CrossCutting.dll
+C:\Users\WladimirFerreira\source\repos\dotnet\todo-dotnet\ToDo.Infra\bin\Debug\net8.0\ToDo.CrossCutting.pdb

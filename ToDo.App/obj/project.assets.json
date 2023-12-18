@@ -27,9 +27,22 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "ToDo.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ToDo.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToDo.CrossCutting.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ToDo.CrossCutting": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ToDo.Domain.dll": {}
         },
@@ -123,6 +136,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ToDo.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../ToDo.CrossCutting/ToDo.CrossCutting.csproj",
+      "msbuildProject": "../ToDo.CrossCutting/ToDo.CrossCutting.csproj"
     },
     "ToDo.Domain/1.0.0": {
       "type": "project",

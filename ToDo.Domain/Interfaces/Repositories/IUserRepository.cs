@@ -9,5 +9,6 @@ namespace ToDo.Domain.Interfaces.Repositories
         Task<int> UpdateUserAsync(UserModel user);
         Task<UserModel?> GetUserByIdAsync(int userId);
         Task<int> DeleteUserAsync(int userId);
+        Task<int?> VerifyIfEmailExists(string email);
     }
 }

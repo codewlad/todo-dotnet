@@ -83,9 +83,9 @@ namespace ToDo.Infra.Repositories
 
         public async Task<UserModel?> GetUserByIdAsync(int userId)
         {
-            string sql = $"{basesql} AND userId = @Id";
+            string sql = $"{basesql} AND userId = @UserId";
 
-            return await _dbConnector.DbConnection.QueryFirstOrDefaultAsync<UserModel>(sql, new { Id = userId }, _dbConnector.DbTransaction);
+            return await _dbConnector.DbConnection.QueryFirstOrDefaultAsync<UserModel>(sql, new { UserId = userId }, _dbConnector.DbTransaction);
         }
 
         public async Task<int> DeleteUserAsync(int userId)
@@ -96,6 +96,15 @@ namespace ToDo.Infra.Repositories
             ";
 
             return await _dbConnector.DbConnection.ExecuteAsync(sql, new { UserId = userId }, _dbConnector.DbTransaction);
+        }
+
+        public async Task<int?> VerifyIfEmailExists(string email)
+        {
+            string sql = $"select userId from users where email = @Email";
+
+            var result = await _dbConnector.DbConnection.ExecuteScalarAsync<int>(sql, new { Email = email }, _dbConnector.DbTransaction);
+
+            return result;
         }
     }
 }
