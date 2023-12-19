@@ -2,7 +2,7 @@
 
 namespace ToDo.CrossCutting.Utils
 {
-    public class EmailHelper
+    public class EmailValidation
     {
         public bool IsEmailValid(string email)
         {

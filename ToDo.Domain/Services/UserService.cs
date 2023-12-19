@@ -15,37 +15,37 @@ namespace ToDo.Domain.Services
             _userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
+        public IEnumerable<UserModel> All()
         {
-            return await _userRepository.GetAllUsersAsync();
+            return _userRepository.All();
         }
 
-        public async Task<int?> CreateUserAsync(UserModel user)
+        public int? CreateUser(UserModel user)
         {
             ValidateData(user, true);
 
             EmailExists(user.Email!, true);
 
-            return await _userRepository.CreateUserAsync(user);
+            return _userRepository.CreateUser(user);
         }
 
-        public async Task<bool> UpdateUserAsync(UserModel user)
+        public bool UpdateUser(UserModel user)
         {
-            var rowsAffected = await _userRepository.UpdateUserAsync(user);
+            var rowsAffected = _userRepository.UpdateUser(user);
 
             if (rowsAffected > 0)
                 return true;
             return false;
         }
 
-        public async Task<UserModel?> GetUserByIdAsync(int userId)
+        public UserModel? GetUserById(int userId)
         {
-            return await _userRepository.GetUserByIdAsync(userId);
+            return _userRepository.GetUserById(userId);
         }
 
-        public async Task<bool> DeleteUserAsync(int userId)
+        public bool DeleteUser(int userId)
         {
-            var rowsAffected = await _userRepository.DeleteUserAsync(userId);
+            var rowsAffected = _userRepository.DeleteUser(userId);
 
             if (rowsAffected > 0)
                 return true;
@@ -74,9 +74,9 @@ namespace ToDo.Domain.Services
                 throw new Exception("O campo email deve ser preenchido.");
             }
 
-            EmailHelper emailHelper = new EmailHelper();
+            EmailValidation emailValidation = new EmailValidation();
 
-            bool isValid = emailHelper.IsEmailValid(user.Email);
+            bool isValid = emailValidation.IsEmailValid(user.Email);
 
             if (!isValid)
             {
@@ -98,7 +98,7 @@ namespace ToDo.Domain.Services
                 throw new Exception("O campo senha deve ser preenchido.");
             }
 
-            if (user.Password.Length <= 6 || user.Password.Length > 12)
+            if (user.Password.Length < 6 || user.Password.Length > 12)
             {
                 throw new Exception("O campo senha deve ter entre 6 e 12 caracteres.");
             }

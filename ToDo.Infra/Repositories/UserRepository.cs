@@ -24,14 +24,14 @@ namespace ToDo.Infra.Repositories
             WHERE 1 = 1
         ";
 
-        public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
+        public IEnumerable<UserModel> All()
         {
             string sql = basesql;
 
-            return await _dbConnector.DbConnection.QueryAsync<UserModel>(sql, _dbConnector.DbTransaction);
+            return _dbConnector.DbConnection.Query<UserModel>(sql, _dbConnector.DbTransaction);
         }
 
-        public async Task<int?> CreateUserAsync(UserModel user)
+        public int? CreateUser(UserModel user)
         {
             string sql = @"
                 INSERT INTO [dbo].[users]
@@ -49,7 +49,7 @@ namespace ToDo.Infra.Repositories
                 SELECT CAST(SCOPE_IDENTITY() as int);
             ";
 
-            return await _dbConnector.DbConnection.ExecuteScalarAsync<int>(sql, new
+            return _dbConnector.DbConnection.ExecuteScalar<int>(sql, new
             {
                 Name = user.Name,
                 Email = user.Email,
@@ -59,7 +59,7 @@ namespace ToDo.Infra.Repositories
             }, _dbConnector.DbTransaction);
         }
 
-        public async Task<int> UpdateUserAsync(UserModel user)
+        public int UpdateUser(UserModel user)
         {
             string sql = @"
                 UPDATE [dbo].[users]
@@ -71,7 +71,7 @@ namespace ToDo.Infra.Repositories
                    UserId = @UserId
             ";
 
-            return await _dbConnector.DbConnection.ExecuteAsync(sql, new
+            return _dbConnector.DbConnection.Execute(sql, new
             {
                 UserId = user.UserId,
                 Name = user.Name,
@@ -81,21 +81,21 @@ namespace ToDo.Infra.Repositories
             }, _dbConnector.DbTransaction);
         }
 
-        public async Task<UserModel?> GetUserByIdAsync(int userId)
+        public UserModel? GetUserById(int userId)
         {
             string sql = $"{basesql} AND userId = @UserId";
 
-            return await _dbConnector.DbConnection.QueryFirstOrDefaultAsync<UserModel>(sql, new { UserId = userId }, _dbConnector.DbTransaction);
+            return _dbConnector.DbConnection.QueryFirstOrDefault<UserModel>(sql, new { UserId = userId }, _dbConnector.DbTransaction);
         }
 
-        public async Task<int> DeleteUserAsync(int userId)
+        public int DeleteUser(int userId)
         {
             string sql = @$"
                 DELETE FROM [dbo].[users]
                 WHERE UserId = @UserId
             ";
 
-            return await _dbConnector.DbConnection.ExecuteAsync(sql, new { UserId = userId }, _dbConnector.DbTransaction);
+            return _dbConnector.DbConnection.Execute(sql, new { UserId = userId }, _dbConnector.DbTransaction);
         }
 
         public async Task<int?> VerifyIfEmailExists(string email)

@@ -17,34 +17,34 @@ namespace ToDo.App.Application
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync()
+        public IEnumerable<UserResponseDTO> All()
         {
-            IEnumerable<UserModel> users = await _userService.GetAllUsersAsync();
+            IEnumerable<UserModel> users = _userService.All();
             var response = _mapper.Map<IEnumerable<UserResponseDTO>>(users);
             return response;
         }
 
-        public async Task<int?> CreateUserAsync(CreateUserDTO user)
+        public int? CreateUser(CreateUserDTO user)
         {
             var userModel = _mapper.Map<UserModel>(user);
-            return await _userService.CreateUserAsync(userModel);
+            return _userService.CreateUser(userModel);
         }
 
-        public async Task<bool> UpdateUserAsync(UpdateUserDTO user)
+        public bool UpdateUser(UpdateUserDTO user)
         {
-            return await _userService.UpdateUserAsync(_mapper.Map<UserModel>(user));
+            return _userService.UpdateUser(_mapper.Map<UserModel>(user));
         }
 
-        public async Task<UserResponseDTO> GetUserByIdAsync(int userId)
+        public UserResponseDTO GetUserById(int userId)
         {
-            UserModel? user = await _userService.GetUserByIdAsync(userId);
+            UserModel? user = _userService.GetUserById(userId);
             var response = _mapper.Map<UserResponseDTO>(user);
             return response;
         }
 
-        public async Task<bool> DeleteUserAsync(int userId)
+        public bool DeleteUser(int userId)
         {
-            var response = await _userService.DeleteUserAsync(userId);
+            var response = _userService.DeleteUser(userId);
 
             return response;
         }
